@@ -126,7 +126,7 @@
             <div class="container mb-3">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Tambah Pelanggan
+                Tambah Pesanan
                 </button>
 
                 <!-- Modal -->
@@ -163,7 +163,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="tambahpelanggan">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="tambahpesanan">Submit</button>
                     </div>
                     </form>
                     </div>
@@ -173,7 +173,7 @@
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                DataTable Example
+                Data Table Pesanan
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
