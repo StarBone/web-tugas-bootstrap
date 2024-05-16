@@ -57,27 +57,23 @@ if (isset($_POST['tambahpelanggan'])) {
     else {
         echo '
         <script>alert("Gagal Menambah Pelanggan");
-        window.location.href="stock.php"
+        window.location.href="pelanggan.php"
         </script>';
     }
 }
 
 if (isset($_POST['tambahpesanan'])) {    
-    $idpesanan = $_POST['idpesanan'];
-    $tanggal = $_POST['tanggal'];
-    $jumlah = $_POST['jumlah'];
-    $iduser = $_POST['iduser'];
     $idpelanggan = $_POST['idpelanggan'];
 
-    $insert = mysqli_query($con, "INSERT INTO pesanan (idpesanan,tanggal,jumlah,iduser,idpelanggan) VALUES ('$idpesanan','$tanggal','$jumlah','$iduser',' $idpelanggan')");
+    $insert = mysqli_query($con, "INSERT INTO pesanan (idpelanggan) VALUES ('$idpelanggan')");
 
     if ($insert) {
-        header('location:pesanan.php');
+        header('location:index.php');
     }
     else {
         echo '
         <script>alert("Gagal Menambah Pelanggan");
-        window.location.href="stock.php"
+        window.location.href="index.php"
         </script>';
     }
 }

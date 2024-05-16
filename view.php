@@ -183,7 +183,7 @@
                       <th>Tanggal</th>
                       <th>Nama Pelanggan</th>
                       <th>Jumlah</th>
-                      <th>Aksi</th>
+                      <th>Edit Delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -200,8 +200,7 @@
                       <td><?=$tanggal;?></td>
                       <td><?=$namapelanggan;?> - <?=$alamat;?></td>
                       <td>Jumlah</td>
-                      <td><a href="view.php" class="btn btn-success px-1" target="blank">Tampilkan</a>
-                      <a href="" class="btn btn-danger ">Delete</a></td>
+                      <td>Edit Delete</td>
                     </tr>
                   <?php
                     };
