@@ -1,5 +1,13 @@
 <?php
   require 'function.php';
+
+  if(isset($_GET['idp'])){
+    $idp = $_GET['idp'];
+  }
+  else {
+    header('location:index.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,14 +127,14 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Data Pesanan <?=$idp;?></h1>
+            <h1 class="mt-4">Data Pesanan : <?=$idp;?></h1>
             <ol class="breadcrumb bg-light mb-4">
               <li class="breadcrumb-item active">Selamat Datang</li>
             </ol>
             <div class="container mb-3">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Tambah Pesanan
+                Tambah Barang
                 </button>
 
                 <!-- Modal -->
@@ -141,7 +149,7 @@
                     <form method="post">
                     <div class="modal-body">
                     Pilih Barang :
-                        <select class="form-control" name="idpelanggan">
+                        <select class="form-control" name="idproduk">
 
                         <?php
                         
@@ -161,10 +169,13 @@
                         };
                         ?>
                         </select>
+
+                        <input type="number" name="qty" class="form-control mt-4" placeholder="Jumlah">
+                        <input type="hidden" name="idp" value="<?=$idp;?>">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="tambahproduk">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="addproduk">Submit</button>
                     </div>
                     </form>
                     </div>
@@ -182,8 +193,8 @@
                     <tr>
                       <th>ID Pesanan</th>
                       <th>Tanggal</th>
-                      <th>Nama Pelanggan</th>
-                      <th>Jumlah</th>
+                      <th>Nama Produk</th>
+                      <th>Deskripsi</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
