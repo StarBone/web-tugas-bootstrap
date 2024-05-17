@@ -194,13 +194,14 @@
                       $idpesanan = $p['idpesanan'];
                       $tanggal = $p['tanggal'];
                       $namapelanggan = $p['nama_pelanggan'];
+                      $alamat = $p['alamat'];
                   ?>
                     <tr>
                       <td><?=$idpesanan;?></td>
                       <td><?=$tanggal;?></td>
                       <td><?=$namapelanggan;?> - <?=$alamat;?></td>
                       <td>Jumlah</td>
-                      <td><a href="view.php" class="btn btn-success px-1" target="blank">Tampilkan</a>
+                      <td><a href="view.php?idp=<?=$idpesanan;?>" class="btn btn-success px-1" target="blank">Tampilkan</a>
                       <a href="" class="btn btn-danger ">Delete</a></td>
                     </tr>
                   <?php

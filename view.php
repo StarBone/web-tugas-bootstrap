@@ -119,7 +119,7 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Data Pesanan</h1>
+            <h1 class="mt-4">Data Pesanan <?=$idp;?></h1>
             <ol class="breadcrumb bg-light mb-4">
               <li class="breadcrumb-item active">Selamat Datang</li>
             </ol>
@@ -140,21 +140,22 @@
                     <!-- Kolom Modal -->
                     <form method="post">
                     <div class="modal-body">
-                    Pilih Pelanggan :
+                    Pilih Barang :
                         <select class="form-control" name="idpelanggan">
 
                         <?php
                         
-                        $getpelanggan = mysqli_query($con,'SELECT * FROM pelanggan');
+                        $getproduk = mysqli_query($con,'SELECT * FROM produk');
 
-                        while($pl = mysqli_fetch_array($getpelanggan)){
-                            $namapelanggan = $pl['nama_pelanggan'];
-                            $idpelanggan = $pl['idpelanggan'];
-                            $alamat = $pl['alamat'];
+                        while($pl = mysqli_fetch_array($getproduk)){
+                            $nama_produk = $pl['nama_produk'];
+                            $stok = $pl['stok'];
+                            $deskripsi = $pl['deskripsi'];
+                            $idproduk = $pl['idproduk'];
                         
                         ?>
 
-                        <option value="<?=$idpelanggan;?>"><?=$namapelanggan;?> - <?=$alamat;?></option>
+                        <option value="<?=$idproduk;?>"><?=$nama_produk;?> - <?=$deskripsi;?></option>
 
                         <?php
                         };
@@ -163,7 +164,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="tambahpesanan">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="tambahproduk">Submit</button>
                     </div>
                     </form>
                     </div>
@@ -183,7 +184,7 @@
                       <th>Tanggal</th>
                       <th>Nama Pelanggan</th>
                       <th>Jumlah</th>
-                      <th>Edit Delete</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -200,7 +201,8 @@
                       <td><?=$tanggal;?></td>
                       <td><?=$namapelanggan;?> - <?=$alamat;?></td>
                       <td>Jumlah</td>
-                      <td>Edit Delete</td>
+                      <td><a href="view.php?idp=<?=$idpesanan;?>" class="btn btn-success px-1" target="blank">Tampilkan</a>
+                      <a href="" class="btn btn-danger ">Delete</a></td>
                     </tr>
                   <?php
                     };
