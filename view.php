@@ -3,6 +3,10 @@
 
   if(isset($_GET['idp'])){
     $idp = $_GET['idp'];
+
+    $ambilnamapelanggan = mysqli_query($con, "SELECT * FROM pesanan p, pelanggan pl WHERE p.idpelanggan=pl.idpelanggan AND p.idpesanan='$idp'");
+    $np = mysqli_fetch_array($ambilnamapelanggan);
+    $namapel = $np['nama_pelanggan'];
   }
   else {
     header('location:index.php');
@@ -128,6 +132,7 @@
         <main>
           <div class="container-fluid px-4">
             <h1 class="mt-4">Data Pesanan : <?=$idp;?></h1>
+            <h1 class="mt-4">Nama Pemesan : <?=$namapel;?></h1>
             <ol class="breadcrumb bg-light mb-4">
               <li class="breadcrumb-item active">Selamat Datang</li>
             </ol>
@@ -191,29 +196,31 @@
                 <table id="datatablesSimple">
                   <thead>
                     <tr>
-                      <th>ID Pesanan</th>
-                      <th>Tanggal</th>
+                      <th>No</th>
                       <th>Nama Produk</th>
-                      <th>Deskripsi</th>
+                      <th>Harga Satuan</th>
+                      <th>Jumlah</th>
+                      <th>Sub-Total</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                   <?php
-                    $get = mysqli_query($con, 'SELECT * FROM pesanan p, pelanggan pl WHERE p.idpelanggan=pl.idpelanggan');
+                    $get = mysqli_query($con, 'SELECT * FROM detailpesanan p, produk pr WHERE p.idproduk=pr.idproduk');
                     $i = 1;
                     while($p = mysqli_fetch_array($get)){
-                      $idpesanan = $p['idpesanan'];
-                      $tanggal = $p['tanggal'];
-                      $namapelanggan = $p['nama_pelanggan'];
+                      $nama_produk = $p['nama_produk'];
+                      $harga = $p['harga'];
+                      $qty = $p['qty'];
+                      $subtotal = $qty * $harga;
                   ?>
                     <tr>
-                      <td><?=$idpesanan;?></td>
-                      <td><?=$tanggal;?></td>
-                      <td><?=$namapelanggan;?> - <?=$alamat;?></td>
-                      <td>Jumlah</td>
-                      <td><a href="view.php?idp=<?=$idpesanan;?>" class="btn btn-success px-1" target="blank">Tampilkan</a>
-                      <a href="" class="btn btn-danger ">Delete</a></td>
+                      <td><?=$i++;?></td>
+                      <td><?=$nama_produk;?></td>
+                      <td><?=$harga;?></td>
+                      <td><?=$qty;?></td>
+                      <td><?=$subtotal;?></td>
+                      <td><a href="" class="btn btn-danger ">Delete</a></td>
                     </tr>
                   <?php
                     };

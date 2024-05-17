@@ -79,18 +79,18 @@ if (isset($_POST['tambahpesanan'])) {
 }
 
 if (isset($_POST['addproduk'])) {    
-    $idpelanggan = $_POST['idproduk'];
+    $idproduk = $_POST['idproduk'];
     $idp = $_POST['idp'];
     $qty = $_POST['qty'];
 
-    $insert = mysqli_query($con, "INSERT INTO detailpesanan (idproduk,idp,qty) VALUES ('$idproduk','$idp','$qty')");
+    $insert = mysqli_query($con, "INSERT INTO detailpesanan (idproduk,idpesanan,qty) VALUES ('$idproduk','$idp','$qty')");
 
     if ($insert) {
         header('location:view.php?idp='.$idp);
     }
     else {
         echo '
-        <script>alert("Gagal Menambah Pelanggan");
+        <script>alert("Gagal Menambah Produk");
         window.location.href="view.php?idp"'.$idp.'
         </script>';
     }
