@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2024 at 09:35 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 17 Bulan Mei 2024 pada 18.06
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,27 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detailpesanan`
+-- Struktur dari tabel `detailpesanan`
 --
 
 CREATE TABLE `detailpesanan` (
-  `idp` int(11) NOT NULL,
+  `iddetailpesanan` int(11) NOT NULL,
   `idpesanan` int(11) DEFAULT NULL,
   `idproduk` int(11) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `detailpesanan`
+-- Dumping data untuk tabel `detailpesanan`
 --
 
-INSERT INTO `detailpesanan` (`idp`, `idpesanan`, `idproduk`, `qty`) VALUES
-(1, NULL, 0, 10);
+INSERT INTO `detailpesanan` (`iddetailpesanan`, `idpesanan`, `idproduk`, `qty`) VALUES
+(1, 2000000, 1, 10);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `masuk`
+-- Struktur dari tabel `masuk`
 --
 
 CREATE TABLE `masuk` (
@@ -57,46 +57,46 @@ CREATE TABLE `masuk` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
   `idpelanggan` int(11) NOT NULL,
   `nama_pelanggan` varchar(50) NOT NULL,
-  `no_telp` varchar(50) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
   `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`idpelanggan`, `nama_pelanggan`, `no_telp`, `alamat`) VALUES
-(1, 'Hasan Nasuha', '085156452309', 'pondok ungu');
+(1, 'Hasan Nasuha', '085156452309', 'Jl sabilillah');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan`
+-- Struktur dari tabel `pesanan`
 --
 
 CREATE TABLE `pesanan` (
   `idpesanan` int(11) NOT NULL,
-  `tanggal` timestamp NULL DEFAULT current_timestamp(),
-  `idpelanggan` int(11) NOT NULL
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
+  `idpelanggan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pesanan`
+-- Dumping data untuk tabel `pesanan`
 --
 
 INSERT INTO `pesanan` (`idpesanan`, `tanggal`, `idpelanggan`) VALUES
-(1, '2024-05-17 07:04:13', 1);
+(2000000, '2024-05-16 16:24:36', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -108,16 +108,16 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`idproduk`, `nama_produk`, `deskripsi`, `harga`, `stok`) VALUES
-(1, 'Roti', 'hsghdsgd', 10000, 1);
+(1, 'Roti Tawar', 'Rasa Coklat', 19000, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -127,7 +127,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`iduser`, `username`, `password`) VALUES
@@ -138,77 +138,77 @@ INSERT INTO `user` (`iduser`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `detailpesanan`
+-- Indeks untuk tabel `detailpesanan`
 --
 ALTER TABLE `detailpesanan`
-  ADD PRIMARY KEY (`idp`);
+  ADD PRIMARY KEY (`iddetailpesanan`);
 
 --
--- Indexes for table `masuk`
+-- Indeks untuk tabel `masuk`
 --
 ALTER TABLE `masuk`
   ADD PRIMARY KEY (`idmasuk`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`idpelanggan`);
 
 --
--- Indexes for table `pesanan`
+-- Indeks untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`idpesanan`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`idproduk`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`iduser`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `detailpesanan`
+-- AUTO_INCREMENT untuk tabel `detailpesanan`
 --
 ALTER TABLE `detailpesanan`
-  MODIFY `idp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iddetailpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `masuk`
+-- AUTO_INCREMENT untuk tabel `masuk`
 --
 ALTER TABLE `masuk`
   MODIFY `idmasuk` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pelanggan`
+-- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `idpelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `pesanan`
+-- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `idpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2000001;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
   MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
