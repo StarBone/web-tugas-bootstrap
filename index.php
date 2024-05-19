@@ -195,12 +195,16 @@
                       $tanggal = $p['tanggal'];
                       $namapelanggan = $p['nama_pelanggan'];
                       $alamat = $p['alamat'];
+
+                      $hitungjumlah = mysqli_query($con,"SELECT * FROM detailpesanan WHERE idpesanan='$idpesanan'");
+                      $jumlah = mysqli_num_rows($hitungjumlah);
+
                   ?>
                     <tr>
                       <td><?=$idpesanan;?></td>
                       <td><?=$tanggal;?></td>
                       <td><?=$namapelanggan;?> - <?=$alamat;?></td>
-                      <td>Jumlah</td>
+                      <td><?=$jumlah;?></td>
                       <td><a href="view.php?idp=<?=$idpesanan;?>" class="btn btn-success px-1" target="blank">Tampilkan</a>
                       <a href="" class="btn btn-danger ">Delete</a></td>
                     </tr>

@@ -158,7 +158,7 @@
 
                         <?php
                         
-                        $getproduk = mysqli_query($con,'SELECT * FROM produk');
+                        $getproduk = mysqli_query($con,"SELECT * FROM produk WHERE idproduk NOT IN(SELECT idproduk FROM detailpesanan WHERE idpesanan='$idp')");
 
                         while($pl = mysqli_fetch_array($getproduk)){
                             $nama_produk = $pl['nama_produk'];
@@ -206,7 +206,7 @@
                   </thead>
                   <tbody>
                   <?php
-                    $get = mysqli_query($con, 'SELECT * FROM detailpesanan p, produk pr WHERE p.idproduk=pr.idproduk');
+                    $get = mysqli_query($con, "SELECT * FROM detailpesanan p, produk pr WHERE p.idproduk=pr.idproduk AND idpesanan='$idp'");
                     $i = 1;
                     while($p = mysqli_fetch_array($get)){
                       $nama_produk = $p['nama_produk'];
@@ -217,9 +217,9 @@
                     <tr>
                       <td><?=$i++;?></td>
                       <td><?=$nama_produk;?></td>
-                      <td><?=$harga;?></td>
-                      <td><?=$qty;?></td>
-                      <td><?=$subtotal;?></td>
+                      <td>Rp. <?=number_format($harga);?></td>
+                      <td><?=number_format($qty);?></td>
+                      <td>Rp. <?=number_format($subtotal);?></td>
                       <td><a href="" class="btn btn-danger ">Delete</a></td>
                     </tr>
                   <?php
