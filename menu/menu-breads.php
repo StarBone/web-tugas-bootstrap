@@ -10,21 +10,21 @@
     <meta name="author" content="" />
     <title>IBUKU BAKERY</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link
-      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
       rel="stylesheet"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="../css/menu.css" rel="stylesheet" />
+    <link href="../css/main.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand fw-bold " href="../menu.php">IBUKU BAKERY</a>
+        <a class="navbar-brand text-light fw-bold" href="../menu.php">IBUKU BAKERY</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -37,14 +37,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../menu.php">Home</a>
+              <a class="nav-link active text-light" aria-current="page" href="../menu.php">Home</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="#!">About</a></li>
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle text-light"
                 id="navbarDropdown"
                 href="#"
                 role="button"
@@ -52,10 +52,10 @@
                 aria-expanded="false"
                 >Shop</a
               >
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="menu-breads.php">Breads</a></li>
-                <li><a class="dropdown-item" href="#!">Cakes</a></li>
-                <li><a class="dropdown-item" href="#!">Pastry and Danish</a></li>
+              <ul class="dropdown-menu bg-darkbrown" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item text-light" href="menu-breads.php">Breads</a></li>
+                <li><a class="dropdown-item text-light" href="menu-cakes.php">Cakes</a></li>
+                <li><a class="dropdown-item text-light" href="menu-pastry.php">Pastry and Danish</a></li>
               </ul>
             </li>
           </ul>
@@ -63,7 +63,7 @@
       </div>
     </nav>
     <!-- Header-->
-    <header class="bg-dark py-5">
+    <header class="bg-medcream py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">Breads</h1>
@@ -271,7 +271,7 @@
       </div>
     </section>
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-darkbrown">
       <div class="container">
         <p class="m-0 text-center text-white">
           Copyright &copy; IBUKU BAKERY 2024
