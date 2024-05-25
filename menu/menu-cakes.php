@@ -20,7 +20,7 @@
     <link href="../css/main.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css">
   </head>
-  <body>
+  <body class="bg-lightcream">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">

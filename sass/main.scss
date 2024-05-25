@@ -5,6 +5,7 @@
 $custom-theme-colors: (
   "darkbrown": #3c2a21,
   "medcream": #d5cea3,
+  "lightcream": #e5e5cb,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
