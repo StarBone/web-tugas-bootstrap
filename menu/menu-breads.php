@@ -63,16 +63,16 @@
       </div>
     </nav>
     <!-- Header-->
-    <header class="py-5">
+    <header>
+      <img src="/assets/img/header/header.png" class="img-fluid" alt="">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">Breads</h1>
-          </p>
+          <h1 class="text-darkbrown display-4 fw-bolder" style="text-decoration: underline double 3px">Breads</h1>
         </div>
       </div>
     </header>
     <!-- Section-->
-    <section class="py-5">
+    <section class="py-5" style="background-image: url('/assets/img/bg/hero.png')">
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"

@@ -67,11 +67,10 @@
       </div>
     </nav>
     <!-- Header-->
-    <header>
-      <img src="/assets/header.png" class="img-fluid" alt="">
+    <header class="bg-header py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="text-darkbrown display-4 fw-bolder" style="text-decoration: underline double 3px">Category</h1>
+          <h1 class="text-medcream display-4 fw-bolder" style="text-decoration: underline double 3px">Category</h1>
         </div>
       </div>
     </header>
