@@ -3,9 +3,10 @@
 @import "../node_modules/bootstrap/scss/_variables";
 
 $custom-theme-colors: (
-  "darkbrown": #3c2a21,
-  "medcream": #d5cea3,
-  "lightcream": #e5e5cb,
+  "darkbrown": #543310,
+  "medcream": #f2ead3,
+  "lightcream": #f8f4e1,
+  "navi": #113946,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);

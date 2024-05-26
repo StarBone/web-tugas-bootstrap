@@ -16,6 +16,10 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
       rel="stylesheet"
     />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="./css/main.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css">
@@ -24,7 +28,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand text-light fw-bold" href="menu.php">IBUKU BAKERY</a>
+        <img src="/assets/logo.png" alt="IBUKU BAKERY" href="menu.php">
         <button
           class="navbar-toggler"
           type="button"
@@ -63,15 +67,16 @@
       </div>
     </nav>
     <!-- Header-->
-    <header class="bg-medcream py-5">
+    <header>
+      <img src="/assets/header.png" class="img-fluid" alt="">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">Category</h1>
+          <h1 class="text-darkbrown display-4 fw-bolder" style="text-decoration: underline double 3px">Category</h1>
         </div>
       </div>
     </header>
     <!-- Section-->
-    <section class="py-5">
+    <section class="py-5" style="background-image: url('/assets/img/bg/hero.png')">
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center"

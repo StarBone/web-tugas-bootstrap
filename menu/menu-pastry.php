@@ -24,7 +24,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand text-light fw-bold" href="../menu.php">IBUKU BAKERY</a>
+      <img src="../assets/logo.png" alt="IBUKU BAKERY" href="../menu.php">
         <button
           class="navbar-toggler"
           type="button"

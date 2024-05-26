@@ -24,7 +24,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand text-light fw-bold" href="../menu.php">IBUKU BAKERY</a>
+      <img src="../assets/logo.png" alt="IBUKU BAKERY" href="../menu.php">
         <button
           class="navbar-toggler"
           type="button"
@@ -63,7 +63,7 @@
       </div>
     </nav>
     <!-- Header-->
-    <header class="bg-medcream py-5">
+    <header class="py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">Breads</h1>
@@ -91,7 +91,7 @@
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Srikaya</h5>
                   <!-- Product price-->
-                  Rp. 7,000
+                  <p class="fw-100">IDR 7K</p>
                 </div>
               </div>
             </div>
