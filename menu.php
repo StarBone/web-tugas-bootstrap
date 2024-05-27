@@ -59,7 +59,7 @@
               <ul class="dropdown-menu bg-darkbrown" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item text-light" href="menu/menu-breads.php">Breads</a></li>
                 <li><a class="dropdown-item text-light" href="menu/menu-cakes.php">Cakes</a></li>
-                <li><a class="dropdown-item text-light" href="menu/menu-pastry.php">Pastry and Danish</a></li>
+                <li><a class="dropdown-item text-light" href="menu/menu-pastry.php">Pastry</a></li>
               </ul>
             </li>
           </ul>
