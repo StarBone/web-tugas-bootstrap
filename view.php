@@ -197,6 +197,7 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th>Kode Produk</th>
                       <th>Nama Produk</th>
                       <th>Harga Satuan</th>
                       <th>Jumlah</th>
@@ -209,6 +210,7 @@
                     $get = mysqli_query($con, "SELECT * FROM detailpesanan p, produk pr WHERE p.idproduk=pr.idproduk AND idpesanan='$idp'");
                     $i = 1;
                     while($p = mysqli_fetch_array($get)){
+                      $kodeproduk = $p['kode_produk'];
                       $nama_produk = $p['nama_produk'];
                       $harga = $p['harga'];
                       $qty = $p['qty'];
@@ -216,6 +218,7 @@
                   ?>
                     <tr>
                       <td><?=$i++;?></td>
+                      <td><?=$kodeproduk;?></td>
                       <td><?=$nama_produk;?></td>
                       <td>Rp. <?=number_format($harga);?></td>
                       <td><?=number_format($qty);?></td>

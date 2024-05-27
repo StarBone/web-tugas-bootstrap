@@ -26,7 +26,7 @@
   <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
       <!-- Navbar Brand-->
-      <a class="navbar-brand ps-3" href="index.php">Start Bootstrap</a>
+      <a class="navbar-brand ps-3" href="index.php">Ibuku Bakery</a>
       <!-- Sidebar Toggle-->
       <button
         class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
@@ -210,6 +210,7 @@
                     <!-- Kolom Modal -->
                     <form method="post">
                     <div class="modal-body">
+                        <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" required>
                         <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk" required>
                         <input type="text" name="deskripsi" class="form-control mt-2 " placeholder="Deskripsi" required>
                         <input type="number" name="stok" class="form-control mt-2" placeholder="Stock Awal" required>
@@ -235,6 +236,7 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th>Kode Produk</th>
                       <th>Nama Produk</th>
                       <th>Deskripsi</th>
                       <th>Stock</th>
@@ -248,6 +250,7 @@
                     $i = 1;
 
                     while($p = mysqli_fetch_array($get)){
+                    $kodeproduk = $p['kode_produk'];
                     $namaproduk = $p['nama_produk'];
                     $deskripsi = $p['deskripsi'];
                     $stok = $p['stok'];
@@ -255,10 +258,11 @@
                   ?>
                     <tr>
                       <td><?=$i++;?></td>
+                      <td><?=$kodeproduk;?></td>
                       <td><?=$namaproduk;?></td>
                       <td><?=$deskripsi;?></td>
                       <td><?=$stok;?></td>
-                      <td><?=$harga;?></td>
+                      <td>Rp. <?=number_format($harga);?></td>
                       <td>Edit Delete</td>
                     </tr>
                   <?php

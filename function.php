@@ -26,12 +26,13 @@ if(isset($_POST['login'])){
 }
 
 if (isset($_POST['tambahbarang'])) {    
+    $kodeproduk = $_POST['kode_produk'];
     $namaproduk = $_POST['nama_produk'];
     $deskripsi = $_POST['deskripsi'];
     $harga = $_POST['harga'];
     $stok = $_POST['stok'];
 
-    $insert = mysqli_query($con, "INSERT INTO produk (nama_produk,deskripsi,stok,harga) VALUES ('$namaproduk','$deskripsi','$stok','$harga')");
+    $insert = mysqli_query($con, "INSERT INTO produk (kode_produk,nama_produk,deskripsi,stok,harga) VALUES ('$kodeproduk','$namaproduk','$deskripsi','$stok','$harga')");
 
     if ($insert) {
         header('location:stock.php');
