@@ -2,8 +2,32 @@
   --bs-body-font-family: "Poppins", sans-serif;
 }
 
-.bg-header {
-  background-image: url("/assets/img/header/header.png");
+.bg-header1 {
+  background-image: url("../assets/img/header/1.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.bg-header2 {
+  background-image: url("../assets/img/header/2.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.bg-header3 {
+  background-image: url("../assets/img/header/3.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.bg-header4 {
+  background-image: url("../assets/img/header/4.jpg");
   background-size: cover;
   background-position: center;
   position: relative;

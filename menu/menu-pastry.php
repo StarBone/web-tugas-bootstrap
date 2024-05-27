@@ -63,16 +63,15 @@
       </div>
     </nav>
     <!-- Header-->
-    <header>
-      <img src="/assets/img/header/header.png" class="img-fluid" alt="">
+    <header class="bg-header4 py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="text-darkbrown display-4 fw-bolder" style="text-decoration: underline double 3px">Pastry</h1>
+          <h1 class="text-medcream display-4 fw-bolder" style="text-decoration: underline double 3px">Pastry</h1>
         </div>
       </div>
     </header>
     <!-- Section-->
-    <section class="py-5" style="background-image: url('/assets/img/bg/hero.png')">
+    <section class="py-5" style="background-image: url('../assets/img/bg/hero.png')">
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
@@ -149,5 +148,7 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
+    <!-- Fa icon -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -28,7 +28,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">
-        <img src="/assets/logo.png" alt="IBUKU BAKERY" href="menu.php">
+        <img src="./assets/logo.png" alt="IBUKU BAKERY" href="menu.php">
         <button
           class="navbar-toggler"
           type="button"
@@ -67,7 +67,7 @@
       </div>
     </nav>
     <!-- Header-->
-    <header class="bg-header py-5">
+    <header class="bg-header1 py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
           <h1 class="text-medcream display-4 fw-bolder" style="text-decoration: underline double 3px">Category</h1>
@@ -75,7 +75,7 @@
       </div>
     </header>
     <!-- Section-->
-    <section class="py-5" style="background-image: url('/assets/img/bg/hero.png')">
+    <section class="py-5" style="background-image: url('./assets/img/bg/hero.png')">
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center"
