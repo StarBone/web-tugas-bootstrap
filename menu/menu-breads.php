@@ -1,3 +1,17 @@
+<?php
+  require '../function.php';
+
+  $get = mysqli_query($con, "SELECT * FROM pesanan p WHERE p.idpesanan='$idp'");
+  $i = 1;
+
+  while($ambilproduk = mysqli_fetch_array($get)){
+  $idpesanan = $ambilproduk['idpesanan'];
+  $kodeproduk = $ambilproduk['kode_produk'];
+  $namaproduk = $ambilproduk['nama_produk'];
+  $deskripsi = $ambilproduk['deskripsi'];
+  $harga = $ambilproduk['harga'];
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,7 +91,7 @@
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -86,17 +100,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Srikaya</h5>
                   <!-- Product price-->
                   <p class="fw-100">IDR 7K</p>
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?idp=<?=$idpesanan;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -105,17 +127,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Strawberry</h5>
                   <!-- Product price-->
                   Rp. 8,500
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -124,17 +154,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Blueberry</h5>
                   <!-- Product price-->
                   Rp. 8,500
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -143,17 +181,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Coffee</h5>
                   <!-- Product price-->
                   Rp. 8,500
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -162,17 +208,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Kacang Merah</h5>
                   <!-- Product price-->
                   Rp. 8,500
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -181,17 +235,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Kacang Hijau</h5>
                   <!-- Product price-->
                   Rp. 8,500
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -200,17 +262,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Kelapa</h5>
                   <!-- Product price-->
                   Rp. 7,000
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -219,17 +289,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Coklat</h5>
                   <!-- Product price-->
                   Rp. 8,500
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -238,17 +316,25 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Cream Mocca</h5>
                   <!-- Product price-->
                   Rp. 7,000
                 </div>
               </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
           <div class="col mb-5">
-            <div class="card h-100">
+            <div class="card h-100 bg-darkbrown border border-0">
               <!-- Product image-->
               <img
                 class="card-img-top"
@@ -257,11 +343,19 @@
               />
               <!-- Product details-->
               <div class="card-body p-4">
-                <div class="text-center">
+                <div class="text-center text-light">
                   <!-- Product name-->
                   <h5 class="fw-bolder">Roti Keju</h5>
                   <!-- Product price-->
                   Rp. 8,500
+                </div>
+              </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?id=<?=$kodeproduk;?>"
+                    >View Details</a
+                  >
                 </div>
               </div>
             </div>

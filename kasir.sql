@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Bulan Mei 2024 pada 18.06
+-- Waktu pembuatan: 28 Bulan Mei 2024 pada 06.34
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -39,7 +39,9 @@ CREATE TABLE `detailpesanan` (
 --
 
 INSERT INTO `detailpesanan` (`iddetailpesanan`, `idpesanan`, `idproduk`, `qty`) VALUES
-(1, 2000000, 1, 10);
+(1, 1, 1, 10),
+(2, 1, 2, 10),
+(3, 2, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,8 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`idpelanggan`, `nama_pelanggan`, `no_telp`, `alamat`) VALUES
-(1, 'Hasan Nasuha', '085156452309', 'Jl sabilillah');
+(1, 'Hasan Nasuha', '085156452309', 'Jl sabilillah'),
+(2, 'Siti Khasanahwati', '087884118616', 'Jl sabilillah');
 
 -- --------------------------------------------------------
 
@@ -91,7 +94,8 @@ CREATE TABLE `pesanan` (
 --
 
 INSERT INTO `pesanan` (`idpesanan`, `tanggal`, `idpelanggan`) VALUES
-(2000000, '2024-05-16 16:24:36', 1);
+(1, '2024-05-19 03:37:53', 1),
+(2, '2024-05-19 04:13:23', 2);
 
 -- --------------------------------------------------------
 
@@ -101,6 +105,7 @@ INSERT INTO `pesanan` (`idpesanan`, `tanggal`, `idpelanggan`) VALUES
 
 CREATE TABLE `produk` (
   `idproduk` int(11) NOT NULL,
+  `kode_produk` varchar(50) DEFAULT NULL,
   `nama_produk` varchar(50) NOT NULL,
   `deskripsi` varchar(50) NOT NULL,
   `harga` int(11) DEFAULT NULL,
@@ -111,8 +116,9 @@ CREATE TABLE `produk` (
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`idproduk`, `nama_produk`, `deskripsi`, `harga`, `stok`) VALUES
-(1, 'Roti Tawar', 'Rasa Coklat', 19000, 1);
+INSERT INTO `produk` (`idproduk`, `kode_produk`, `nama_produk`, `deskripsi`, `harga`, `stok`) VALUES
+(2, 'B-01', 'Roti Srikaya', 'tidak ada rasa', 7000, 1),
+(3, 'B-02', 'Roti Strawberry', 'tidak ada rasa', 8500, 5);
 
 -- --------------------------------------------------------
 
@@ -181,7 +187,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `detailpesanan`
 --
 ALTER TABLE `detailpesanan`
-  MODIFY `iddetailpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `iddetailpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `masuk`
@@ -193,19 +199,19 @@ ALTER TABLE `masuk`
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `idpelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idpelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `idpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2000001;
+  MODIFY `idpesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idproduk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

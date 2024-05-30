@@ -211,7 +211,7 @@
                     <form method="post">
                     <div class="modal-body">
                         <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" required>
-                        <input type="text" name="nama_produk" class="form-control" placeholder="Nama Produk" required>
+                        <input type="text" name="nama_produk" class="form-control mt-2" placeholder="Nama Produk" required>
                         <input type="text" name="deskripsi" class="form-control mt-2 " placeholder="Deskripsi" required>
                         <input type="number" name="stok" class="form-control mt-2" placeholder="Stock Awal" required>
                         <input type="number" name="harga" class="form-control mt-2" placeholder="Harga" required>

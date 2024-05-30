@@ -1,9 +1,23 @@
 <?php
-  require 'function.php';
+  require '../function.php';
+
+  if(isset($_GET['idp'])){
+    $idp = $_GET['idp'];
+
+    $ambilp = mysqli_query($con, "SELECT * FROM pesanan p WHERE p.idpesanan='$idp'");
+    $np = mysqli_fetch_array($ambilp);
+  }
+  
+  $get = mysqli_query($con, "SELECT * FROM produk");
+  $ambilproduk = mysqli_fetch_array($get);
+  $kodeproduk = $ambilproduk['kode_produk'];
+  $namaproduk = $ambilproduk['nama_produk'];
+  $deskripsi = $ambilproduk['deskripsi'];
+  $harga = $ambilproduk['harga'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head>  
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -24,14 +38,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="./css/main.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link href="../css/main.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body class="bg-lightcream">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-darkbrown bg-darkbrown">
       <div class="container px-4 px-lg-5">
-        <img src="./assets/logo.png" alt="IBUKU BAKERY" href="menu.php">
+        <img src="../assets/logo.png" alt="IBUKU BAKERY" href="../menu.php">
         <button
           class="navbar-toggler"
           type="button"
@@ -46,7 +60,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="menu.php">Home</a>
+              <a class="nav-link active text-light" aria-current="page" href="../menu.php">Home</a>
             </li>
             <li class="nav-item"><a class="nav-link text-light" href="#!">About</a></li>
             <li class="nav-item dropdown">
@@ -60,9 +74,9 @@
                 >Shop</a
               >
               <ul class="dropdown-menu bg-darkbrown" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item text-light" href="menu/menu-breads.php">Breads</a></li>
-                <li><a class="dropdown-item text-light" href="menu/menu-cakes.php">Cakes</a></li>
-                <li><a class="dropdown-item text-light" href="menu/menu-pastry.php">Pastry</a></li>
+                <li><a class="dropdown-item text-light" href="menu-breads.php">Breads</a></li>
+                <li><a class="dropdown-item text-light" href="menu-cakes.php">Cakes</a></li>
+                <li><a class="dropdown-item text-light" href="menu-pastry.php">Pastry</a></li>
               </ul>
             </li>
           </ul>
@@ -81,17 +95,13 @@
             />
           </div>
           <div class="col-md-6">
-            <div class="small mb-1">SKU: BST-498</div>
-            <h1 class="display-5 fw-bolder">Shop item template</h1>
+            <div class="small mb-1">SKU: <?=$kodeproduk;?></div>
+            <h1 class="display-5 fw-bolder"><?=$namaproduk;?></h1>
             <div class="fs-5 mb-5">
-              <span class="text-decoration-line-through">$45.00</span>
-              <span>$40.00</span>
+            <span>Rp. <?=number_format($harga);?></span>
             </div>
             <p class="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium at dolorem quidem modi. Nam sequi consequatur
-              obcaecati excepturi alias magni, accusamus eius blanditiis
-              delectus ipsam minima ea iste laborum vero?
+              <?=$deskripsi;?>
             </p>
             <div class="d-flex">
               <input
@@ -111,7 +121,7 @@
       </div>
     </section>
     <!-- Footer-->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-darkbrown">
       <div class="container">
         <p class="m-0 text-center text-white">
           Copyright &copy; Your Website 2023
@@ -121,6 +131,6 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
   </body>
 </html>
