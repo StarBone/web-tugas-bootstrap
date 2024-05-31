@@ -1,16 +1,12 @@
 <?php
   require '../function.php';
 
-  $get = mysqli_query($con, "SELECT * FROM pesanan p WHERE p.idpesanan='$idp'");
-  $i = 1;
-
-  while($ambilproduk = mysqli_fetch_array($get)){
-  $idpesanan = $ambilproduk['idpesanan'];
+  $get = mysqli_query($con, "SELECT * FROM produk");
+  $ambilproduk = mysqli_fetch_array($get);
   $kodeproduk = $ambilproduk['kode_produk'];
   $namaproduk = $ambilproduk['nama_produk'];
   $deskripsi = $ambilproduk['deskripsi'];
   $harga = $ambilproduk['harga'];
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +106,7 @@
               <!-- Product actions-->
               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                 <div class="text-center">
-                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?idp=<?=$idpesanan;?>"
+                  <a class="btn bg-medcream fw-semibold text-dark mt-auto" href="items.php?kp=<?=$kodeproduk;?>"
                     >View Details</a
                   >
                 </div>
