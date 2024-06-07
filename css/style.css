@@ -49,6 +49,15 @@
   z-index: 1;
 }
 
+.c-item {
+  height: 80px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Gradient color */
 /* header {
   background-image: linear-gradient(to bottom right, #3c2a21, #e5e5cb);

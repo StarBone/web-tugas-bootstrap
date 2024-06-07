@@ -67,10 +67,18 @@
       </div>
     </nav>
     <!-- Header-->
-    <header class="bg-header1 py-5">
-      <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-          <h1 class="text-medcream display-4 fw-bolder" style="text-decoration: underline double 3px">Category</h1>
+    <header>
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src="./assets/img/header/5.png" class="d-block w-100 c-img" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/img/header/6.jpg" class="d-block w-100 c-img" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/img/header/7.jpg" class="d-block w-100 c-img" alt="...">
+          </div>
         </div>
       </div>
     </header>
