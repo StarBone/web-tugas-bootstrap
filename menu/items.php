@@ -3,20 +3,20 @@ require '../function.php';
 
 // Cek apakah kode produk sudah diterima dari URL
 if(isset($_GET['kp'])){
-$kode_produk = $_GET['kp'];
+    $kode_produk = $_GET['kp'];
 
-// Ambil data produk berdasarkan kode produk
-$ambilproduk = mysqli_query($con, "SELECT * FROM produk WHERE kode_produk='$kode_produk'");
-$produk = mysqli_fetch_array($ambilproduk);
-$namaproduk = $produk['nama_produk'];
-$deskripsi = $produk['deskripsi'];
-$harga = $produk['harga'];
-$gambar = $produk['gambar']; // Pastikan kolom gambar ada di database dan diambil di sini
-} 
+    // Ambil data produk berdasarkan kode produk
+    $ambilproduk = mysqli_query($con, "SELECT * FROM produk WHERE kode_produk='$kode_produk'");
+    $produk = mysqli_fetch_array($ambilproduk);
+    $namaproduk = $produk['nama_produk'];
+    $deskripsi = $produk['deskripsi'];
+    $harga = $produk['harga'];
+    $gambar = $produk['gambar']; // Pastikan kolom gambar ada di database dan diambil di sini
+    } 
 else {
-// Jika tidak ada kode produk, alihkan ke halaman menu atau halaman kesalahan
-header("Location: ../menu.php");
-exit;
+    // Jika tidak ada kode produk, alihkan ke halaman menu atau halaman kesalahan
+    header("Location: ../menu.php");
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ exit;
       <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
           <div class="col-md-6">
-            <img class="card-img-top mb-5 mb-md-0" src="../assets/img/breads/<?=$gambar;?>" alt="<?=$namaproduk;?>" />
+            <img class="card-img-top mb-5 mb-md-0" src="<?=$gambar;?>" alt="<?=$namaproduk;?>" />
           </div>
           <div class="col-md-6">
             <div class="small mb-1">Kode Produk: <?=$kode_produk;?></div>

@@ -215,6 +215,7 @@
                         <input type="text" name="deskripsi" class="form-control mt-2 " placeholder="Deskripsi" required>
                         <input type="number" name="stok" class="form-control mt-2" placeholder="Stock Awal" required>
                         <input type="number" name="harga" class="form-control mt-2" placeholder="Harga" required>
+                        <input type="file" name="image" accept=".jpg, .jpeg, .png" class="form-control mt-2" placeholder="File" value="">
                     </div>
                     
                     <div class="modal-footer">
