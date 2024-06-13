@@ -25,3 +25,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 });
+
+function confirmDeletion(url) {
+  if (confirm("Anda yakin ingin menghapus data ini?")) {
+    window.location.href = url;
+  }
+}

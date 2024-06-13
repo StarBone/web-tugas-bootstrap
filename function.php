@@ -115,24 +115,4 @@ if (isset($_POST['addproduk'])) {
         </script>';
     }
 }
-
-if (isset($_POST['hapusbarang'])) {
-    $idproduk = $_POST['idproduk'];
-
-    // Perform deletion query
-    $query = "DELETE FROM produk WHERE idproduk = ?";
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, 'i', $idproduk);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-
-    // Optionally, you may also delete related entries in other tables
-    // For example, if there are entries in `detailpesanan` related to this product
-
-    // Redirect or refresh the page after deletion
-    header('Location: stock.php');
-    exit();
-}
-
-?>
 ?>

@@ -1,5 +1,24 @@
 <?php
   require 'logincek.php';
+
+  if (isset($_GET['delete'])) {
+    $kode_produk = $_GET['delete'];
+    
+    // Query untuk menghapus data produk berdasarkan kode_produk
+    $deleteQuery = "DELETE FROM produk WHERE kode_produk='$kode_produk'";
+    $result = mysqli_query($con, $deleteQuery);
+
+    $resetAIQuery = "ALTER TABLE produk AUTO_INCREMENT = 1";
+    mysqli_query($con, $resetAIQuery);
+    
+    if ($result) {
+        echo "<script>alert('Data berhasil dihapus');</script>";
+    } else {
+        echo "<script>alert('Data gagal dihapus');</script>";
+    }
+    header("Location: stock.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -243,6 +262,7 @@
                       <th>Stock</th>
                       <th>Harga Produk</th>
                       <th>gambar</th>
+                      <th>delete</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -265,6 +285,9 @@
                       <td><?= $harga; ?></td>
                       <td><?= $stok; ?></td>
                       <td><img src="<?= $gambar; ?>" width="100" height="100"></td>
+                      <td>
+                        <a href="stock.php?delete=<?= $kodeproduk; ?>" onclick="confirmDeletion('stock.php?delete=<?= $kodeproduk; ?>')" class="btn btn-danger">Delete</a>
+                      </td>
                     </tr>
                     <?php
                       };
