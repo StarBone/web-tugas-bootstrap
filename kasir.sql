@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2024 pada 06.34
+-- Waktu pembuatan: 12 Jun 2024 pada 05.58
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -109,16 +109,18 @@ CREATE TABLE `produk` (
   `nama_produk` varchar(50) NOT NULL,
   `deskripsi` varchar(50) NOT NULL,
   `harga` int(11) DEFAULT NULL,
-  `stok` int(11) DEFAULT NULL
+  `stok` int(11) DEFAULT NULL,
+  `gambar` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`idproduk`, `kode_produk`, `nama_produk`, `deskripsi`, `harga`, `stok`) VALUES
-(2, 'B-01', 'Roti Srikaya', 'tidak ada rasa', 7000, 1),
-(3, 'B-02', 'Roti Strawberry', 'tidak ada rasa', 8500, 5);
+INSERT INTO `produk` (`idproduk`, `kode_produk`, `nama_produk`, `deskripsi`, `harga`, `stok`, `gambar`) VALUES
+(1, 'B-01', 'Roti Srikaya', 'tidak ada rasa', 7000, 1, ''),
+(2, 'B-02', 'Roti Strawberry', 'tidak ada rasa', 8500, 5, ''),
+(3, 'B-03', 'Roti Coklat', 'Rasa coklat', 7500, 1, '');
 
 -- --------------------------------------------------------
 
