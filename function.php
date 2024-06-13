@@ -31,16 +31,34 @@ if (isset($_POST['tambahbarang'])) {
     $deskripsi = $_POST['deskripsi'];
     $harga = $_POST['harga'];
     $stok = $_POST['stok'];
-    $gambar = $_FILES['gambar'];
+    $gambar = $_FILES['image'];
 
-    $insert = mysqli_query($con, "INSERT INTO produk (kode_produk,nama_produk,deskripsi,stok,harga,gambar) VALUES ('$kodeproduk','$namaproduk','$deskripsi','$stok','$harga','$gambar')");
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($gambar["name"]);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    if ($insert) {
-        header('location:stock.php');
-    }
-    else {
+    $check = getimagesize($gambar["tmp_name"]);
+    if ($check !== false) {
+        if (move_uploaded_file($gambar["tmp_name"], $target_file)) {
+            $insert = mysqli_query($con, "INSERT INTO produk (kode_produk, nama_produk, deskripsi, stok, harga, gambar) VALUES ('$kodeproduk', '$namaproduk', '$deskripsi', '$stok', '$harga', '$target_file')");
+
+            if ($insert) {
+                header('location:stock.php');
+            } else {
+                echo '
+                <script>alert("Gagal Menambah Barang");
+                window.location.href="stock.php"
+                </script>';
+            }
+        } else {
+            echo '
+            <script>alert("Gagal mengupload gambar");
+            window.location.href="stock.php"
+            </script>';
+        }
+    } else {
         echo '
-        <script>alert("Gagal Menambah Barang");
+        <script>alert("File bukan gambar");
         window.location.href="stock.php"
         </script>';
     }
@@ -98,4 +116,23 @@ if (isset($_POST['addproduk'])) {
     }
 }
 
+if (isset($_POST['hapusbarang'])) {
+    $idproduk = $_POST['idproduk'];
+
+    // Perform deletion query
+    $query = "DELETE FROM produk WHERE idproduk = ?";
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, 'i', $idproduk);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    // Optionally, you may also delete related entries in other tables
+    // For example, if there are entries in `detailpesanan` related to this product
+
+    // Redirect or refresh the page after deletion
+    header('Location: stock.php');
+    exit();
+}
+
+?>
 ?>

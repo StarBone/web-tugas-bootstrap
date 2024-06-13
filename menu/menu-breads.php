@@ -62,7 +62,7 @@ $get = mysqli_query($con, "SELECT * FROM produk");
                     <div class="col mb-5">
                         <div class="card h-100 bg-darkbrown border border-0">
                             <!-- Product image-->
-                            <img class="card-img-top" src="../assets/img/breads/<?= $row['image']; ?>" alt="..." />
+                            <img class="card-img-top" src="../<?= $row['gambar']; ?>" alt="<?= $row['nama_produk']; ?>" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center text-light">

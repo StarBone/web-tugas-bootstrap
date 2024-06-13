@@ -208,7 +208,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <!-- Kolom Modal -->
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <input type="text" name="kode_produk" class="form-control" placeholder="Kode Produk" required>
                         <input type="text" name="nama_produk" class="form-control mt-2" placeholder="Nama Produk" required>
@@ -242,33 +242,33 @@
                       <th>Deskripsi</th>
                       <th>Stock</th>
                       <th>Harga Produk</th>
-                      <th>Aksi</th>
+                      <th>gambar</th>
                     </tr>
                   </thead>
                   <tbody>
-                  <?php
-                    $get = mysqli_query($con, 'SELECT * FROM produk');
-                    $i = 1;
-
-                    while($p = mysqli_fetch_array($get)){
-                    $kodeproduk = $p['kode_produk'];
-                    $namaproduk = $p['nama_produk'];
-                    $deskripsi = $p['deskripsi'];
-                    $stok = $p['stok'];
-                    $harga = $p['harga'];
-                  ?>
+                    <?php
+                      $ambilsemuadata = mysqli_query($con, "SELECT * FROM produk");
+                      $i = 1;
+                      while ($data = mysqli_fetch_array($ambilsemuadata)) {
+                        $kodeproduk = $data['kode_produk'];
+                        $namaproduk = $data['nama_produk'];
+                        $deskripsi = $data['deskripsi'];
+                        $harga = $data['harga'];
+                        $stok = $data['stok'];
+                        $gambar = $data['gambar'];
+                    ?>
                     <tr>
-                      <td><?=$i++;?></td>
-                      <td><?=$kodeproduk;?></td>
-                      <td><?=$namaproduk;?></td>
-                      <td><?=$deskripsi;?></td>
-                      <td><?=$stok;?></td>
-                      <td>Rp. <?=number_format($harga);?></td>
-                      <td>Edit Delete</td>
+                      <td><?= $i++; ?></td>
+                      <td><?= $kodeproduk; ?></td>
+                      <td><?= $namaproduk; ?></td>
+                      <td><?= $deskripsi; ?></td>
+                      <td><?= $harga; ?></td>
+                      <td><?= $stok; ?></td>
+                      <td><img src="<?= $gambar; ?>" width="100" height="100"></td>
                     </tr>
-                  <?php
-                    };
-                  ?>
+                    <?php
+                      };
+                    ?>
                 </tbody>
                 </table>
               </div>
